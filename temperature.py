@@ -35,12 +35,11 @@ width, height = unicornhathd.get_shape()
 text_x = width
 text_y = 2
 
-
 font_file, font_size = FONT
 
 font = ImageFont.truetype(font_file, font_size)
 
-text_width, text_height = width, 0
+text_width, text_height = width, 7
 
 text_width += width + text_x + 1
 
