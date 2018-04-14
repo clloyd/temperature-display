@@ -12,6 +12,8 @@ except ImportError:
 
 import unicornhathd
 
+import requests
+
 
 temperature = 1
 
@@ -38,12 +40,17 @@ font = ImageFont.truetype(font_file, font_size)
 text_width, text_height = width, 7
 
 while True:
+
+    r = requests.get("http://192.168.86.21:3000/")
+
+    temp = float(r.text)
+
     image = Image.new("RGB", (width, height), (0,0,0))
     draw = ImageDraw.Draw(image)
 
     offset_left = 0
 
-    draw.text((0, 0), str(temperature), (0,255,0,255), font=font)
+    draw.text((0, 0), str(round(temp, 0)), (0,255,0,255), font=font)
 
     for x in range(width):
         for y in range(height):
