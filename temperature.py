@@ -49,6 +49,8 @@ draw = ImageDraw.Draw(image)
 
 offset_left = 0
 
+draw.text((text_x + offset_left, text_y), temperature, (255,255,255,255), font=font)
+
 for scroll in range(text_width - width):
     for x in range(width):
         for y in range(height):
@@ -59,7 +61,4 @@ for scroll in range(text_width - width):
     unicornhathd.show()
     time.sleep(0.01)
 
-
-
-time.sleep(1000)
 unicornhathd.off()
