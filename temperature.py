@@ -29,8 +29,11 @@ FONT = ("/usr/share/fonts/truetype/freefont/FreeSansBold.ttf", 12)
 unicornhathd.rotation(0)
 unicornhathd.brightness(1.0)
 
-
 width, height = unicornhathd.get_shape()
+
+print("Starting...")
+print("Width: " + width)
+print("Height: " + height)
 
 text_x = width
 text_y = 2
