@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 import colorsys
 import signal
@@ -39,7 +39,7 @@ text_width, text_height = width, 7
 
 while True:
 
-    r = requests.get("http://192.168.86.21:3000/")
+    r = requests.get("http://localhost:3000/")
 
     temp = float(r.text)
 
