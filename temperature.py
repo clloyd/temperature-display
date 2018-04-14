@@ -59,4 +59,7 @@ for scroll in range(text_width - width):
     unicornhathd.show()
     time.sleep(0.01)
 
+
+
+time.sleep(1000)
 unicornhathd.off()
