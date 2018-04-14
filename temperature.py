@@ -18,10 +18,10 @@ temperature = "28"
 # Use `fc-list` to show a list of installed fonts on your system,
 # or `ls /usr/share/fonts/` and explore.
 
-# FONT = ("/usr/share/fonts/truetype/freefont/FreeSansBold.ttf", 12)
+FONT = ("/usr/share/fonts/truetype/freefont/FreeSansBold.ttf", 14)
 
 # sudo apt install fonts-droid
-FONT = ("/usr/share/fonts/truetype/droid/DroidSans.ttf", 12)
+# FONT = ("/usr/share/fonts/truetype/droid/DroidSans.ttf", 12)
 
 # sudo apt install fonts-roboto
 # FONT = ("/usr/share/fonts/truetype/roboto/Roboto-Bold.ttf", 12)
