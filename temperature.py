@@ -3,6 +3,7 @@
 import colorsys
 import signal
 import time
+import random
 from sys import exit
 
 try:
@@ -13,9 +14,6 @@ except ImportError:
 import unicornhathd
 
 import requests
-
-
-temperature = 1
 
 # Use `fc-list` to show a list of installed fonts on your system,
 # or `ls /usr/share/fonts/` and explore.
@@ -50,7 +48,7 @@ while True:
 
     offset_left = 0
 
-    draw.text((0, 0), str(round(temp, 0)), (0,255,0,255), font=font)
+    draw.text((0, 0), str(round(temp, 0)), (random.randint(0,255), random.randint(0,255), random.randint(0,255),255), font=font)
 
     for x in range(width):
         for y in range(height):
@@ -60,7 +58,6 @@ while True:
             unicornhathd.set_pixel(width - x - 1, y, r, g, b)
 
     unicornhathd.show()
-    time.sleep(1)
-    temperature += 1
+    time.sleep(10)
 
 unicornhathd.off()
