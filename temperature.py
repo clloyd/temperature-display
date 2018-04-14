@@ -32,8 +32,8 @@ unicornhathd.brightness(1.0)
 width, height = unicornhathd.get_shape()
 
 print("Starting...")
-print("Width: " + width)
-print("Height: " + height)
+print("Width: " + str(width))
+print("Height: " + str(height))
 
 text_x = width
 text_y = 2
