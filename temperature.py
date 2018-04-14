@@ -49,16 +49,15 @@ draw = ImageDraw.Draw(image)
 
 offset_left = 0
 
-draw.text((text_x + offset_left, text_y), temperature, (255,255,255,255), font=font)
+draw.text((text_x + offset_left, text_y), temperature, (0,255,0,255), font=font)
 
-for scroll in range(text_width - width):
-    for x in range(width):
-        for y in range(height):
-            pixel = image.getpixel((x+scroll, y))
-            r, g, b = [int(n) for n in pixel]
-            unicornhathd.set_pixel(width-1-x, y, r, g, b)
+for x in range(width):
+    for y in range(height):
+        pixel = image.getpixel((x, y))
+        r, g, b = [int(n) for n in pixel]
+        unicornhathd.set_pixel(width-1-x, y, r, g, b)
 
-    unicornhathd.show()
-    time.sleep(0.01)
+unicornhathd.show()
+time.sleep(0.01)
 
 unicornhathd.off()
