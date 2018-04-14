@@ -58,6 +58,6 @@ for x in range(width):
         unicornhathd.set_pixel(width-1-x, y, r, g, b)
 
 unicornhathd.show()
-time.sleep(0.01)
+time.sleep(100)
 
 unicornhathd.off()
