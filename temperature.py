@@ -53,7 +53,7 @@ while True:
             unicornhathd.set_pixel(width - x - 1, y, r, g, b)
 
     unicornhathd.show()
-    time.sleep(100)
+    time.sleep(1)
     temperature + 1
 
 unicornhathd.off()
