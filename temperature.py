@@ -35,29 +35,28 @@ print("Starting...")
 print("Width: " + str(width))
 print("Height: " + str(height))
 
-text_x = width
-text_y = 2
-
 font_file, font_size = FONT
 
 font = ImageFont.truetype(font_file, font_size)
 
 text_width, text_height = width, 7
 
-text_width += width + text_x + 1
-
-image = Image.new("RGB", (text_width,max(16, text_height)), (0,0,0))
+image = Image.new("RGB", (width, height), (0,0,0))
 draw = ImageDraw.Draw(image)
 
 offset_left = 0
 
-draw.text((text_x + offset_left, text_y), temperature, (0,255,0,255), font=font)
+draw.text((0, 0), temperature, (0,255,0,255), font=font)
 
 for x in range(width):
     for y in range(height):
         pixel = image.getpixel((x, y))
         r, g, b = [int(n) for n in pixel]
-        unicornhathd.set_pixel(width-1-x, y, r, g, b)
+
+        print("Pixel: " + str(x) + " " + str(y))
+        print("RGB: " + str(r) + " " + str(g) + " " + str(b))
+
+        unicornhathd.set_pixel(x, y, r, g, b)
 
 unicornhathd.show()
 time.sleep(100)
