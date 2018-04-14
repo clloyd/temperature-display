@@ -53,10 +53,7 @@ for x in range(width):
         pixel = image.getpixel((x, y))
         r, g, b = [int(n) for n in pixel]
 
-        print("Pixel: " + str(x) + " " + str(y))
-        print("RGB: " + str(r) + " " + str(g) + " " + str(b))
-
-        unicornhathd.set_pixel(x, y, r, g, b)
+        unicornhathd.set_pixel(width - x, y, r, g, b)
 
 unicornhathd.show()
 time.sleep(100)
