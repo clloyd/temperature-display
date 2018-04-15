@@ -67,13 +67,11 @@ def pickColour(temp):
     return colours[temp]
 
 
-temp = 15
-
 while True:
 
-    # r = requests.get("http://localhost:8367/")
+    r = requests.get("http://localhost:8367/")
 
-    # temp = float(r.text)
+    temp = float(r.text)
 
     image = Image.new("RGB", (width, height), (0,0,0))
     draw = ImageDraw.Draw(image)
@@ -90,11 +88,6 @@ while True:
             unicornhathd.set_pixel(width - x - 1, y, r, g, b)
 
     unicornhathd.show()
-    time.sleep(1)
-
-    temp = temp + 1
-
-    if temp > 35:
-        temp = 15
+    time.sleep(10)
 
 unicornhathd.off()
