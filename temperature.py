@@ -78,7 +78,9 @@ while True:
 
     offset_left = 0
 
-    draw.text((0, 0), str(round(temp, 0)), pickColour(temp), font=font)
+    rounded_temp = round(temp, 0)
+
+    draw.text((0, 0), str(rounded_temp), pickColour(rounded_temp), font=font)
 
     for x in range(width):
         for y in range(height):
