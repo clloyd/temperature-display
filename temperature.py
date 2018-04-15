@@ -73,23 +73,32 @@ while True:
 
     temp = float(r.text)
 
-    image = Image.new("RGB", (width, height), (0,0,0))
-    draw = ImageDraw.Draw(image)
+    iteration = 0
 
-    offset_left = 0
+    while (iteration < 16):
 
-    rounded_temp = round(temp, 0)
+        image = Image.new("RGB", (width, height), (0,0,0))
+        draw = ImageDraw.Draw(image)
 
-    draw.text((0, 0), str(rounded_temp), pickColour(rounded_temp), font=font)
+        offset_left = 0
 
-    for x in range(width):
-        for y in range(height):
-            pixel = image.getpixel((x, y))
-            r, g, b = [int(n) for n in pixel]
+        rounded_temp = round(temp, 0)
 
-            unicornhathd.set_pixel(width - x - 1, y, r, g, b)
+        draw.text((0, 0), str(rounded_temp), pickColour(rounded_temp), font=font)
 
-    unicornhathd.show()
-    time.sleep(10)
+        for x in range(width):
+            for y in range(height):
+
+                if (y == 0) & (x < iteration):
+                    unicornhathd.set_pixel(x, y, 255, 255, 255)
+                    
+
+                pixel = image.getpixel((x, y))
+                r, g, b = [int(n) for n in pixel]
+
+                unicornhathd.set_pixel(width - x - 1, y, r, g, b)
+
+        unicornhathd.show()
+        time.sleep(1)
 
 unicornhathd.off()
