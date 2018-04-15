@@ -75,6 +75,9 @@ while True:
 
     iteration = 1
 
+    pixels_not_lit = range(width)
+    pixels_to_be_lit = list()
+
     while (iteration < 16):
 
         image = Image.new("RGB", (width, height), (0,0,0))
@@ -86,7 +89,10 @@ while True:
 
         draw.text((0, 0), str(rounded_temp), pickColour(rounded_temp), font=font)
 
-        pixels_to_be_lit = random.sample(range(width), iteration)
+        new_pixel = random.sample(pixels_not_lit, 1)
+
+        pixels_not_lit.remove(new_pixel)
+        pixels_to_be_lit.append(new_pixel)
 
         for x in range(width):
             for y in range(height):
