@@ -91,7 +91,7 @@ def animateChangeDown(iteration, x, y, r, g, b):
         unicornhathd.set_pixel(x, y, r, g, b)
 
 
-temp = 14
+temp = 30
 
 last_temp = None
 last_change_time = None
