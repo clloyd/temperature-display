@@ -68,7 +68,18 @@ def pickColour(temp):
     return colours[temp]
 
 
-def animateChange(iteration, x, y, r, g, b):
+def animateChangeUp(iteration, x, y, r, g, b):
+
+    if iteration % 3 == 0 and x % 3 == 0:
+        unicornhathd.set_pixel(x, y, r, g, b)
+
+    if (iteration + 1) % 3 == 0 and (x + 1) % 3 == 0:
+        unicornhathd.set_pixel(x, y, r, g, b)
+
+    if (iteration + 2) % 3 == 0 and (x + 2) % 3 == 0:
+        unicornhathd.set_pixel(x, y, r, g, b)
+
+def animateChangeDown(iteration, x, y, r, g, b):
 
     if iteration % 3 == 0 and x % 3 == 0:
         unicornhathd.set_pixel(x, y, r, g, b)
@@ -78,6 +89,7 @@ def animateChange(iteration, x, y, r, g, b):
 
     if (iteration - 2) % 3 == 0 and (x - 2) % 3 == 0:
         unicornhathd.set_pixel(x, y, r, g, b)
+
 
 # temp = None
 
@@ -133,10 +145,10 @@ while True:
 
                 if y == height - 1:
                     if last_temp and temp > last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
-                        animateChange(iteration, width - x - 1, y, 255, 0, 0)
+                        animateChangeUp(iteration, width - x - 1, y, 50, 0, 0)
 
                     if last_temp and temp < last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
-                        animateChange(iteration, width - x - 1, y, 0, 0, 255)
+                        animateChangeDown(iteration, width - x - 1, y, 0, 0, 50)
 
 
         unicornhathd.show()
