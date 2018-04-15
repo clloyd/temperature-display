@@ -77,7 +77,9 @@ while True:
 
     r = requests.get("http://localhost:8367/")
 
-    new_temp = float(r.text)
+    new_temp_float = float(r.text)
+
+    new_temp = round(new_temp_float, 0)
 
     if new_temp != temp:
         last_temp = temp
@@ -96,9 +98,7 @@ while True:
 
         offset_left = 0
 
-        rounded_temp = round(temp, 0)
-
-        draw.text((0, 0), str(rounded_temp), pickColour(rounded_temp), font=font)
+        draw.text((0, 0), str(temp), pickColour(temp), font=font)
 
         new_pixel = random.sample(pixels_not_lit, 1)[0]
 
