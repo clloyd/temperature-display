@@ -89,7 +89,7 @@ while True:
 
         draw.text((0, 0), str(rounded_temp), pickColour(rounded_temp), font=font)
 
-        new_pixel = random.sample(pixels_not_lit, 1)
+        new_pixel = random.sample(pixels_not_lit, 1)[0]
 
         pixels_not_lit.remove(new_pixel)
         pixels_to_be_lit.append(new_pixel)
