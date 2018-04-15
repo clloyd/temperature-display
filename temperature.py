@@ -88,15 +88,15 @@ while True:
 
         for x in range(width):
             for y in range(height):
+                pixel = image.getpixel((x, y))
+                r, g, b = [int(n) for n in pixel]
+
+                unicornhathd.set_pixel(width - x - 1, y, r, g, b)
 
                 if y == 0 and x < iteration:
                     print("Dot")
                     unicornhathd.set_pixel(x, y, 255, 255, 255)
 
-                pixel = image.getpixel((x, y))
-                r, g, b = [int(n) for n in pixel]
-
-                unicornhathd.set_pixel(width - x - 1, y, r, g, b)
 
         unicornhathd.show()
         time.sleep(1)
