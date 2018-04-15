@@ -73,7 +73,7 @@ while True:
 
     temp = float(r.text)
 
-    iteration = 0
+    iteration = 1
 
     while (iteration < 16):
 
@@ -86,6 +86,8 @@ while True:
 
         draw.text((0, 0), str(rounded_temp), pickColour(rounded_temp), font=font)
 
+        pixels_to_be_lit = random.sample(range(width), iteration)
+
         for x in range(width):
             for y in range(height):
                 pixel = image.getpixel((x, y))
@@ -93,11 +95,8 @@ while True:
 
                 unicornhathd.set_pixel(width - x - 1, y, r, g, b)
 
-                if y == 0 and x < iteration:
-                    unicornhathd.set_pixel(width - x - 1, y, 70, 70, 70)
-                if y == height - 1 and x < iteration:
-                    unicornhathd.set_pixel(x - 1, y, 70, 70, 70)
-
+                if y == 0 and x in pixels_to_be_lit:
+                    unicornhathd.set_pixel(x, y, 70, 70, 70)
 
 
         unicornhathd.show()
