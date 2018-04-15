@@ -96,7 +96,7 @@ while True:
                 unicornhathd.set_pixel(width - x - 1, y, r, g, b)
 
                 if y == 0 and x in pixels_to_be_lit:
-                    unicornhathd.set_pixel(x, y, 70, 70, 70)
+                    unicornhathd.set_pixel(width - x - 1, y, 70, 70, 70)
 
 
         unicornhathd.show()
