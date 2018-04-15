@@ -73,10 +73,10 @@ def animateChange(iteration, x, y, r, g, b):
     if iteration % 3 == 0 and x % 3 == 0:
         unicornhathd.set_pixel(x, y, r, g, b)
 
-    if iteration - 1 % 3 == 0 and x % 3 == 0:
+    if (iteration - 1) % 3 == 0 and (x - 1) % 3 == 0:
         unicornhathd.set_pixel(x, y, r, g, b)
 
-    if iteration - 2 % 3 == 0 and x - 2 % 3 == 0:
+    if (iteration - 2) % 3 == 0 and (x - 2) % 3 == 0:
         unicornhathd.set_pixel(x, y, r, g, b)
 
 # temp = None
