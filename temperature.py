@@ -73,7 +73,7 @@ while True:
 
     temp = float(r.text)
 
-    iteration = 1
+    iteration = 0
 
     pixels_not_lit = range(width)
     pixels_to_be_lit = list()
