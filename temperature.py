@@ -89,7 +89,7 @@ while True:
         for x in range(width):
             for y in range(height):
 
-                if (y == 0) & (x < iteration):
+                if y == 0 and x < iteration:
                     print("Dot")
                     unicornhathd.set_pixel(x, y, 255, 255, 255)
 
