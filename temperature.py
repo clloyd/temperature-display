@@ -81,7 +81,9 @@ def animateChange(iteration, x, y, r, g, b):
             unicornhathd.set_pixel(x, y, r, g, b)
  
 
-temp = None
+# temp = None
+
+temp = 25
 
 last_temp = None
 last_change_time = None
