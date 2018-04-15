@@ -94,8 +94,7 @@ while True:
                 unicornhathd.set_pixel(width - x - 1, y, r, g, b)
 
                 if y == 0 and x < iteration:
-                    print("Dot")
-                    unicornhathd.set_pixel(width - x - 1, y, 255, 255, 255)
+                    unicornhathd.set_pixel(width - x - 1, y, 10, 10, 10)
 
 
         unicornhathd.show()
