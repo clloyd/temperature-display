@@ -91,9 +91,7 @@ def animateChangeDown(iteration, x, y, r, g, b):
         unicornhathd.set_pixel(x, y, r, g, b)
 
 
-# temp = None
-
-temp = 25
+temp = None
 
 last_temp = None
 last_change_time = None
@@ -103,9 +101,7 @@ while True:
 
     r = requests.get("http://localhost:8367/")
 
-    # new_temp_float = float(r.text)
-
-    new_temp_float = temp + random.randint(-3, 4)
+    new_temp_float = float(r.text)
 
     new_temp = round(new_temp_float, 0)
 
@@ -144,10 +140,10 @@ while True:
                     unicornhathd.set_pixel(width - x - 1, y, 70, 70, 70)
 
                 if y == height - 1:
-                    if last_temp and temp > last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
+                    if last_temp and temp > last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 30):
                         animateChangeUp(iteration, width - x - 1, y, 70, 0, 0)
 
-                    if last_temp and temp < last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
+                    if last_temp and temp < last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 30):
                         animateChangeDown(iteration, width - x - 1, y, 0, 0, 70)
 
 
