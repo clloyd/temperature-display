@@ -70,7 +70,7 @@ def pickColour(temp):
 
 def animateChange(iteration, x, y, r, g, b):
     if iteration < 8:
-        if x < 8 and x - 8 >= iteration:
+        if x < 8 and x >= 8 - iteration:
             unicornhathd.set_pixel(x, y, r, g, b)
         if x > 8 and x - 8 >= 8 - iteration:
             unicornhathd.set_pixel(x, y, r, g, b)
