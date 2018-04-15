@@ -100,5 +100,7 @@ while True:
 
         unicornhathd.show()
         time.sleep(1)
+        
+        iteration += 1
 
 unicornhathd.off()
