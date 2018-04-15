@@ -4,6 +4,7 @@ import colorsys
 import signal
 import time
 import random
+import datetime
 from sys import exit
 
 try:
@@ -67,11 +68,21 @@ def pickColour(temp):
     return colours[temp]
 
 
+temp = None
+
+last_temp = None
+last_change_time = None
+
 while True:
 
     r = requests.get("http://localhost:8367/")
 
-    temp = float(r.text)
+    new_temp = float(r.text)
+
+    if new_temp != temp:
+        last_temp = temp
+        last_change_time = datetime.datetime.now()
+        temp = new_temp
 
     iteration = 0
 
@@ -103,6 +114,13 @@ while True:
 
                 if y == 0 and x in pixels_to_be_lit:
                     unicornhathd.set_pixel(width - x - 1, y, 70, 70, 70)
+
+                if y == height - 1:
+                    if temp > last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
+                        unicornhathd.set_pixel(width - x - 1, y, 255, 0, 0)
+                    if temp < last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
+                        unicornhathd.set_pixel(width - x - 1, y, 0, 0, 255)
+
 
 
         unicornhathd.show()
