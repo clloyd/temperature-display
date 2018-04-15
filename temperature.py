@@ -68,16 +68,32 @@ def pickColour(temp):
     return colours[temp]
 
 
+def animateChange(iteration, x, y, r, g, b):
+    if iteration < 8:
+        if x < 8 and x >= 8 - iteration:
+            unicornhathd.set_pixel(x, y, r, g, b)
+        if x > 8 and x - 8 >= iteration:
+            unicornhathd.set_pixel(x, y, r, g, b)
+    if iteration > 8:
+        if x < 8 and x <= 8 - iteration:
+            unicornhathd.set_pixel(x, y, r, g, b)
+        if x > 8 and x - 8 <= iteration:
+            unicornhathd.set_pixel(x, y, r, g, b)
+ 
+
 temp = None
 
 last_temp = None
 last_change_time = None
 
+
 while True:
 
     r = requests.get("http://localhost:8367/")
 
-    new_temp_float = float(r.text)
+    # new_temp_float = float(r.text)
+
+    new_temp_float = temp + random.randint(-3, 4)
 
     new_temp = round(new_temp_float, 0)
 
@@ -117,12 +133,10 @@ while True:
 
                 if y == height - 1:
                     if last_temp and temp > last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
-                        print("Increasing from " + str(last_temp) + " to " + str(temp))
-                        unicornhathd.set_pixel(width - x - 1, y, 255, 0, 0)
-                    if last_temp and temp < last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
-                        print("Decreasing from " + str(last_temp) + " to " + str(temp))
-                        unicornhathd.set_pixel(width - x - 1, y, 0, 0, 255)
+                        animateChange(iteration, width - x - 1, y, 255, 0, 0)
 
+                    if last_temp and temp < last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
+                        animateChange(iteration, width - x - 1, y, 0, 0, 255)
 
 
         unicornhathd.show()
