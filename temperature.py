@@ -95,7 +95,7 @@ while True:
 
                 if y == 0 and x < iteration:
                     unicornhathd.set_pixel(width - x - 1, y, 70, 70, 70)
-                if y == height and x < iteration:
+                if y == height - 1 and x < iteration:
                     unicornhathd.set_pixel(x - 1, y, 70, 70, 70)
 
 
