@@ -92,9 +92,9 @@ while True:
     unicornhathd.show()
     time.sleep(2)
 
-    temperature = temperature + 1
+    temp = temp + 1
 
-    if temperature > 35:
-        temperature = 15
+    if temp > 35:
+        temp = 15
 
 unicornhathd.off()
