@@ -145,10 +145,10 @@ while True:
 
                 if y == height - 1:
                     if last_temp and temp > last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
-                        animateChangeUp(iteration, width - x - 1, y, 50, 0, 0)
+                        animateChangeUp(iteration, width - x - 1, y, 70, 0, 0)
 
                     if last_temp and temp < last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
-                        animateChangeDown(iteration, width - x - 1, y, 0, 0, 50)
+                        animateChangeDown(iteration, width - x - 1, y, 0, 0, 70)
 
 
         unicornhathd.show()
