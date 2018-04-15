@@ -117,10 +117,10 @@ while True:
 
                 if y == height - 1:
                     if last_temp and temp > last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
-                        print("Increasing from " + last_temp + " to " + temp)
+                        print("Increasing from " + str(last_temp) + " to " + str(temp))
                         unicornhathd.set_pixel(width - x - 1, y, 255, 0, 0)
                     if last_temp and temp < last_temp and last_change_time > datetime.datetime.now() - datetime.timedelta(minutes = 15):
-                        print("Decreasing from " + last_temp + " to " + temp)
+                        print("Decreasing from " + str(last_temp) + " to " + str(temp))
                         unicornhathd.set_pixel(width - x - 1, y, 0, 0, 255)
 
 
